@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product Releaser</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="banner">
+<h1>Product Releaser</h1>
+</div>
+<div id="left-panel">
+<%= link_to 'Products', products_path %>
+<br>
+<%= link_to 'Categories', categories_path %>
+
+<br>
+<%= link_to 'New Product', new_product_path %>
+<br>
+<%= link_to 'New Category', new_category_path %>
+</div>
+
+<div id="main-panel">
+<%= yield %>
+</div>
+
+<div id="footer">
+Copyright zxc &copy; 2020
+</div>
+
+</body>
+</html>

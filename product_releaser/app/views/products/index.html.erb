@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Products</h1>
+
+<div class="products">
+
+<% @products.each do |product| %>
+<div class=”product”>
+   Name:<%= link_to product.name, product %> | 
+   Category:<%= link_to product.category.name, product.category%> |
+   <%= link_to 'Edit', edit_product_path(product) %>
+   <%= link_to 'Destroy', product, method: :delete, data: {
+ confirm: 'Are you sure?' } %>
+   <pre><%= product.description %></pre>
+</div>
+<% end %>
+</div>
+<%= will_paginate @products, renderer: BootstrapPagination::Rails %>
+<br>
+
+<%= link_to 'New Product', new_product_path %>
